@@ -1,0 +1,20 @@
+{
+  "name": "music-presentation",
+  "version": "0.1.0",
+  "description": "music-presentation",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:schmeter/music-presentation.git"
+  },
+  "author": "schmeter <schmeter@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "backslide": "^2.3.4"
+  },
+  "scripts": {
+    "watch": "bs serve",
+    "init": "bs init",
+    "start": "bs serve"
+  }
+}

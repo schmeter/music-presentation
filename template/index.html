@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  {{{style}}}
+  <script src="remark.min.js"></script>  
+  <script src="mermaid.min.js"></script>
+  <link rel="stylesheet" href="mermaid.css">
+  <script>
+    function create() {
+      return remark.create({
+        {{{source}}},
+        ratio: '16:9',
+        highlightLines: true,
+        countIncrementalSlides: false,
+        highlightStyle: 'github'
+      });
+    }
+    mermaid.initialize({
+      startOnLoad: false,
+      cloneCssStyles: false
+    });
+    function initMermaid(s) {
+      var diagrams = document.querySelectorAll('.mermaid');
+      var i;
+      for(i=0;i<diagrams.length;i++){
+        if(diagrams[i].offsetWidth>0){
+          mermaid.init(undefined, diagrams[i]);
+        }
+      }
+    }
+    function setSlideshowForMermaid(slideshow) {
+      slideshow.on('afterShowSlide', initMermaid);
+      initMermaid(slideshow.getSlides()[slideshow.getCurrentSlideIndex()]);
+    }
+  </script>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#B0D400">
+  <meta name="msapplication-TileColor" content="#007575">
+  <meta name="theme-color" content="#ffffff">
+  <!-- SVG version of Font Awesome - needs to be SVG for a proper PDF export -->
+  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+</head>
+<body onload="slideshow = create(); setSlideshowForMermaid(slideshow);">
+</body>
+</html>
