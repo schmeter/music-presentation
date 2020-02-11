@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "backslide": "^2.3.4"
+    "backslide": "^2.5.0"
   },
   "scripts": {
     "watch": "bs serve",
