@@ -9,12 +9,14 @@
   "author": "schmeter <schmeter@gmail.com>",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "backslide": "^2.5.0"
-  },
   "scripts": {
     "watch": "bs serve",
     "init": "bs init",
-    "start": "bs serve"
+    "start": "bs serve",
+    "update": "npm-update-all"
+  },
+  "dependencies": {
+    "backslide": "^2.6.2",
+    "npm-update-all": "^1.0.1"
   }
 }
